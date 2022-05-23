@@ -24,15 +24,24 @@ public class RegistServlet extends HttpServlet {
 
         if("abcde".equalsIgnoreCase(code)){
             if (userService.existsUsername(username)){
-                System.out.println("用户名"+username+"不可用");
+                System.out.println("用户名"+username+"已存在");
+                String errorMsg = "用户名"+username+"已存在";
+                System.out.println(errorMsg);
+                req.setAttribute("msg",errorMsg);
                 req.getRequestDispatcher("/pages/user/register.html").forward(req, resp);
             } else {
                 userService.registUser(new User(null, username, password, email));
-                //跳到注册成功页面 regist_success.html
-                req.getRequestDispatcher("/pages/user/regist_success.html").forward(req, resp);
+                //跳到注册成功页面 regist_success.jsp
+                req.getRequestDispatcher("/pages/user/regist_success.jsp").forward(req, resp);
             }
         } else {
             System.out.println("验证码["+code+"]错误,应该为abcde");
+
+            String errorMsg = "验证码["+code+"]错误,应该为abcde";
+            System.out.println(errorMsg);
+            req.setAttribute("msg",errorMsg);
+            req.setAttribute("username",username);
+            req.setAttribute("email",email);
             req.getRequestDispatcher("/pages/user/register.html").forward(req, resp);
         }
 

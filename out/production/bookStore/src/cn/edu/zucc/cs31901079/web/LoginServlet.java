@@ -19,10 +19,13 @@ public class LoginServlet extends HttpServlet   {
         String password = req.getParameter("password");
         User loginUser = userService.login(new User(null, username, password, null));
         if (loginUser == null){
-            System.out.println("用户名不存在");
-            req.getRequestDispatcher("/pages/user/login.html").forward(req, resp);
+            String errorMsg = "用户名不存在";
+            System.out.println(errorMsg);
+            req.setAttribute("msg",errorMsg);
+            req.setAttribute("username",username);
+            req.getRequestDispatcher("/pages/user/login.jsp").forward(req, resp);
         } else {
-            req.getRequestDispatcher("/pages/user/login_success.html").forward(req, resp);
+            req.getRequestDispatcher("/pages/user/login_success.jsp").forward(req, resp);
         }
 
     }
