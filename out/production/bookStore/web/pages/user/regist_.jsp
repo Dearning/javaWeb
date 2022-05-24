@@ -94,7 +94,7 @@
 	</head>
 	<body>
 		<div id="login_header">
-			<img class="logo_img" alt="" src="../../static/img/Logo_深学习-100-480x200px_youtube.png" >
+			<img class="logo_img" alt="" src="static/img/Logo_深学习-100-480x200px_youtube.png" >
 		</div>
 
 			<div id = "main"  class="login_banner">
@@ -134,7 +134,7 @@
 									<br />
 									<label>验证码：</label>
 									<input class="itxt" type="text" style="width: 150px;" id="code"/>
-									<img alt="" src="../../static/img/code.bmp" style="float: right; margin-right: 40px">
+									<img alt="" src="static/img/code.bmp" style="float: right; margin-right: 40px">
 									<br />
 									<br />
 									<input type="submit" value="注册" id="sub_btn" />

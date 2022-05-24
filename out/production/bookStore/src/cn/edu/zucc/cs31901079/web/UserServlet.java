@@ -9,8 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.lang.reflect.Method;
 
-public class UserServlet extends HttpServlet {
+public class UserServlet extends BaseServlet {
 
     private UserService userService = new UserServiceImpl();
 
@@ -51,7 +52,7 @@ public class UserServlet extends HttpServlet {
         } else {
             System.out.println("验证码["+code+"]错误,应该为abcde");
 
-            String errorMsg = "验证码["+code+"]错误,应该为abcde";
+            String errorMsg =    "验证码["+code+"]错误,应该为abcde";
             System.out.println(errorMsg);
             req.setAttribute("msg",errorMsg);
             req.setAttribute("username",username);
@@ -60,13 +61,5 @@ public class UserServlet extends HttpServlet {
         }
 
     }
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String action = req.getParameter("action");
-        if("login".equalsIgnoreCase(action)){
 
-        } else if ("regist".equalsIgnoreCase(action)){
-
-        }
-    }
 }

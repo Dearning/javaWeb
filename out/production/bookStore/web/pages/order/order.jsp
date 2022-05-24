@@ -15,7 +15,7 @@
 <body>
 	
 	<div id="header">
-			<img class="logo_img" alt="" src="../../static/img/Logo_深学习-100-480x200px_youtube.png" >
+			<img class="logo_img" alt="" src="static/img/Logo_深学习-100-480x200px_youtube.png" >
 			<span class="wel_word">我的已借书籍</span>
 
 		<%@ include file="/pages/common/login_success_menu.jsp"%>

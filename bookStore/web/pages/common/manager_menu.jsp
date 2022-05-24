@@ -9,5 +9,5 @@
 <div>
     <a href="book_manager.jsp">图书管理</a>
     <a href="order_manager.jsp">已借书籍管理</a>
-    <a href="../../../index.jsp">返回商城</a>
+    <a href="index.jsp">返回商城</a>
 </div>

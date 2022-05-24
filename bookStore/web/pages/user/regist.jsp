@@ -80,7 +80,8 @@
 							<div class="tit">
 								<h1>注册深学习会员</h1>
 								<span class="errorMsg">
-									 <%=request.getAttribute("msg")==null? "请输入注册信息":request.getAttribute("msg")%>
+<%--									 <%=request.getAttribute("msg")==null? "请输入注册信息":request.getAttribute("msg")%>--%>
+									${empty requestScope.msg?"请输入用户名和密码":requestScope.msg}
 								</span>
 							</div>
 							<div class="f	orm">
@@ -90,29 +91,30 @@
 									<label>用户名称：</label>
 									<input class="itxt" type="text" placeholder="请输入用户名"
 										   autocomplete="off" tabindex="1" name="username" id="username"
-										   value="<%=request.getAttribute("username")==null? "":request.getAttribute("username")%>"
-									/>
+										   value="${requestScope.username}"/>
 									<br />
 									<br />
 									<label>用户密码：</label>
 									<input class="itxt" type="password" placeholder="请输入密码"
-										   autocomplete="off" tabindex="1" name="password" id="password" />
+										   autocomplete="off" tabindex="1" name="password" id="password"
+										   value="${requestScope.password}"/>
 									<br />
 									<br />
 									<label>确认密码：</label>
 									<input class="itxt" type="password" placeholder="确认密码"
-										   autocomplete="off" tabindex="1" name="repwd" id="repwd" />
+										   autocomplete="off" tabindex="1" name="repwd" id="repwd"
+										   value="${requestScope.repwd}"/>
 									<br />
 									<br />
 									<label>电子邮件：</label>
 									<input class="itxt" type="text" placeholder="请输入邮箱地址"
 										   autocomplete="off" tabindex="1" name="email" id="email"
-										   value="<%=request.getAttribute("email")==null? "":request.getAttribute("email")%>"
-									/>
+										   value="${requestScope.email}"/>
 									<br />
 									<br />
 									<label>验证码：</label>
-									<input class="itxt" type="text" name="code" style="width: 150px;" id="code"/>
+									<input class="itxt" type="text" name="code" style="width: 150px;" id="code"
+										   value="${requestScope.code}"/>
 									<img alt="" src="static/img/code.bmp" style="float: right; margin-right: 40px">
 									<br />
 									<br />

@@ -9,7 +9,7 @@
 <body>
 	
 	<div id="header">
-			<img class="logo_img" alt="" src="../../static/img/Logo_深学习-100-480x200px_youtube.png" >
+			<img class="logo_img" alt="" src="static/img/Logo_深学习-100-480x200px_youtube.png" >
 			<span class="wel_word">已借书籍管理系统</span>
 
 		<%@ include file="/pages/common/manager_menu.jsp"%>
